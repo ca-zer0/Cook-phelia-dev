@@ -1,24 +1,42 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# テーブル設計
 
-Things you may want to cover:
+ユーザー
+メール
+パスワード
+名前,string
 
-* Ruby version
+料理
+(料理id)
+料理名,string
+カテゴリーid,integer
+献立id,integer
+写真
 
-* System dependencies
+材料
+(材料id)
+料理id,references
+材料名,string
+量,string
 
-* Configuration
+料理_材料(中間テーブル)
+料理id,references
+材料id,references
 
-* Database creation
+買い物リスト
+(リストid)
+ユーザidreferences
+メモ,text
 
-* Database initialization
+リスト_料理(中間テーブル)
+リストid,references
+料理id,references
 
-* How to run the test suite
+リスト_材料(中間テーブル)
+リストid,references
+材料id,references
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+料理名｜料理カテゴリー｜献立｜写真｜材料｜量｜ユーザ情報｜メモ
