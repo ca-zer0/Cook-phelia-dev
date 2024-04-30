@@ -2,41 +2,87 @@
 
 # テーブル設計
 
-ユーザー
-メール
-パスワード
-名前,string
+## users テーブル
 
-料理
-(料理id)
-料理名,string
-カテゴリーid,integer
-献立id,integer
-写真
+| Column             | Type   | Options                   |
+| -----------------  | ------ | --------                  |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+| name               | string | null: false               |
 
-材料
-(材料id)
-料理id,references
-材料名,string
-量,string
+has_many :lists
 
-料理_材料(中間テーブル)
-料理id,references
-材料id,references
+## recipes テーブル
 
-買い物リスト
-(リストid)
-ユーザidreferences
-メモ,text
+| Column             | Type    | Options     |
+| -----------------  | ------  | --------    |
+| name               | string  | null: false |
+| category_id        | integer | null: false |
+| kondate_id         | integer | null: false |
 
-リスト_料理(中間テーブル)
-リストid,references
-料理id,references
+has_many :list_recipes
+has_many :recipe_foods
+has_many :foods, through: :recipe_foods
+has_many :lists, through: :list_recipes
 
-リスト_材料(中間テーブル)
-リストid,references
-材料id,references
 
+## foods テーブル
+
+| Column   | Type       | Options     |
+| -------  | ------     | --------    |
+| name     | string     | null: false |
+| amount   | string     | null: false |
+
+has_many :list_foods
+has_many :recipe_foods
+has_many :recipes, through: :recipe_foods
+has_many :lists, through: :list_foods
+
+## recipe_foods テーブル
+
+| Column | Type       | Options     |
+| -------| ------     | --------    |
+| recipe | references | null: false |
+| food   | references | null: false |
+
+belongs_to :recipe
+belongs_to :food
+
+
+## lists テーブル
+
+| Column | Type       | Options     |
+| -------| ------     | --------    |
+| user   | references | null: false |
+| memo   | text       |             |
+
+belongs_to :user
+has_many :list_recipes
+has_many :list_foods
+has_many :recipes, through: :list_recipe
+has_many :foods, through: :list_foods
+
+
+## list_recipes テーブル
+
+| Column  | Type       | Options     |
+| ------ -| ------     | --------    |
+| list    | references | null: false |
+| recipe  | references | null: false |
+
+belongs_to :list
+belongs_to :recipe
+
+
+## list_food テーブル
+
+| Column  | Type       | Options     |
+| ------ -| ------     | --------    |
+| list    | references | null: false |
+| food　  | references | null: false |
+
+belongs_to :food
+belongs_to :recipe
 
 
 料理名｜料理カテゴリー｜献立｜写真｜材料｜量｜ユーザ情報｜メモ
