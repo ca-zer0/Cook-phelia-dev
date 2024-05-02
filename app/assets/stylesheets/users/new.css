@@ -67,6 +67,11 @@
   background-color: #ccc;
   font-size: 14px;
 }
+.signup-link{
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
 .account-page .field {
   margin-bottom: 10px;
 }

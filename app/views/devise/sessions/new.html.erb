@@ -18,11 +18,11 @@
         </div>
         <div class='account-page' id='account-page'>
           <div class='account-page__inner clearfix'>
-          
+
             <div class='account-page__inner--left account-page__header'>
               <h2>Log in</h2>
               <h5>登録しているユーザーでログイン</h5>
-              <%= render "devise/shared/links"%>
+              <%= link_to "Sign up",  new_user_registration_path, class: 'signup-link'%>
             </div>
 
             <div class='account-page__inner--right user-form'>
