@@ -1,0 +1,33 @@
+<%= stylesheet_link_tag 'shared/header', :media => "all" %>
+
+<header class='header'>
+  <div class='app-name'>
+  <%= link_to 'Cook-phelia', root_path , class: "title" %>
+  </div>
+  <div class='user'>
+    <ul class='user-nav'>
+      <li class='nav-btn' id="lists">
+        <%= link_to image_tag("user.jpg", class:"user-btn"), edit_user_registration_path %>
+      </li>
+    <ul class="show-lists hidden" id="pull-down">
+      <li class="pull-down-list">編集</li>
+      <li class="pull-down-list">ログアウト</li>
+    </ul>
+  </div>
+  <div class='screen'>
+    <h2 class='title'>
+    マイレシピ
+    </h2>
+  </div>
+  <div class='nav'>
+    <ul class="nav-lists">
+      <li class="lists-btn" id="lists">≡
+      </li>
+    </ul>
+    <ul class="show-lists hidden" id="pull-down">
+      <li class="pull-down-list">マイレシピ</li>
+      <li class="pull-down-list">レシピ追加</li>
+      <li class="pull-down-list">買い物リスト</li>
+    </ul>
+  </div>
+</header>
