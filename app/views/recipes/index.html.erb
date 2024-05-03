@@ -1,0 +1,45 @@
+<head>
+  <%= stylesheet_link_tag 'recipes/index', :media => "all" %>
+  <%= stylesheet_link_tag 'recipes/btn', :media => "all" %>
+  <%= stylesheet_link_tag 'reset', :media => "all" %>
+</head>
+
+<body>
+<%= render "shared/index_header" %>
+<%# レシピ一覧 %>
+  <div class='recipe-contents'>
+    <ul class='item-lists'>
+    <% @recipes.each do |recipe| %>
+      <li class='list'>
+        <%= link_to recipe_path(recipe.id) do %>
+        <div class='item-img-content'>
+          <%= image_tag recipe.image,size: '185x50', class: "recipe-img" %>
+        </div>
+        <div class='recipe-info'>
+          <h3 class='recipe-name'>
+            <%= recipe.name %>
+          </h3>
+        </div>
+        <% end %>
+    <% end %>
+    <% if @recipes.empty? %>
+      <li class='list'>
+        <%= link_to '#' do %>
+        <%= image_tag "user.jpg",size: '185x50', class: "recipe-img" %>
+        <div class='recipe-info'>
+          <h3 class='recipe-name'>
+            レシピを追加してね！
+          </h3>
+        </div>
+        <% end %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+<%# /レシピ一覧 %>
+<%= link_to '#', class: 'add-recipe-btn' do %>
+  <span class='add-recipe--btn-text'>追加する</span>
+  <%= image_tag 'top.png' , size: '185x50' ,class: "add-recipe-btn-icon" %>
+<% end %>
+<%= render "shared/footer" %>
+</body>
