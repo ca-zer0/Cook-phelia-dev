@@ -24,7 +24,7 @@
 }
 
 .app-texts{
-  margin-left: 200px;
+  margin: 0 30px 0 200px;
 }
 
 .app-name{
@@ -71,18 +71,13 @@
   background-color: #ccc;
   font-size: 14px;
 }
-.signup-link{
-  text-decoration: none;
-  font-size: 20px;
-  color: black;
-}
 .account-page .field {
   margin-bottom: 10px;
 }
 .account-page .field .field-label {
-  padding: 10px 0;
+  padding: 10px 0 0 0;
   letter-spacing: 1px;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 550;
 }
 .account-page .field .field-label i {
