@@ -1,5 +1,5 @@
-class Kondate < Active_Hash::Base
-  self.date = [
+class Kondate < ActiveHash::Base
+  self.data = [
    { id: 1, name: '---' },
    { id: 2, name: '主菜' },
    { id: 3, name: '副菜' },
@@ -10,5 +10,4 @@ class Kondate < Active_Hash::Base
 
   include ActiveHash::Associations
   has_many :recipes
-
 end
