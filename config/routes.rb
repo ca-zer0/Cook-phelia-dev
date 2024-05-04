@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-  resources :recipes, only: [:index]
+  resources :recipes
+
 end

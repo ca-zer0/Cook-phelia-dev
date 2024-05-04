@@ -8,3 +8,4 @@
 //= link shared/footer.css
 //= link recipes/btn.css
 //= link recipes/index.css
+//= link recipes/new.css
