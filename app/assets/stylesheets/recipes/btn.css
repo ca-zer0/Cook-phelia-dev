@@ -1,22 +1,19 @@
 .add-recipe-btn {
-  width: 120px;
-  background: #3ccace;
+  width: 600px;
+  background: #e46829;
   text-align: center;
-  border-radius: 4%;
-  bottom: 32px;
-  right: 32px;
+  border-radius: 25%;
   position: fixed;
+  bottom: 70px;
+  right: 470px;
   padding: 15px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 30px;
 }
 
 .add-recipe-btn-text {
-  color: #fff;
   display: block;
-  font-size: 18px;
-  text-decoration: none;
+  font-size: 30px;
   margin-bottom: 5px;
-}
-
-.addrecipe-btn-icon {
-  width: 60%;
 }
