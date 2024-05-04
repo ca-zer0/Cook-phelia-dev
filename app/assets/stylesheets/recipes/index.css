@@ -1,0 +1,8 @@
+.item-lists{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item-lists .list{
+  width: 33.3333%;
+}
