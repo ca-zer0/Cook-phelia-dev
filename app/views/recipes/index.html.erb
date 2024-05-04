@@ -7,14 +7,13 @@
 <body>
 <%= render "shared/index_header" %>
 <%# レシピ一覧 %>
+<div class='recipe-screen'>
   <div class='recipe-contents'>
     <ul class='item-lists'>
     <% @recipes.each do |recipe| %>
       <li class='list'>
-        <%= link_to recipe_path(recipe.id) do %>
-        <div class='item-img-content'>
-          <%= image_tag recipe.image,size: '50x50', class: "recipe-img" %>
-        </div>
+      <%= link_to recipe_path(recipe.id), class: 'recipe-link' do %>
+          <%= image_tag recipe.image, class: "recipe-img" %>
         <div class='recipe-info'>
           <h3 class='recipe-name'>
             <%= recipe.name %>
@@ -36,10 +35,11 @@
     <% end %>
     </ul>
   </div>
+</div>
 <%# /レシピ一覧 %>
 <%= link_to new_recipe_path, class: 'add-recipe-btn' do %>
   <span class='add-recipe--btn-text'>追加する</span>
-  <%= image_tag 'top.png' , size: '185x50' ,class: "add-recipe-btn-icon" %>
+  <%= image_tag 'top.png' , size: '50x50' ,class: "add-recipe-btn-icon" %>
 <% end %>
 <%= render "shared/footer" %>
 </body>
