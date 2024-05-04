@@ -37,7 +37,7 @@
     </ul>
   </div>
 <%# /レシピ一覧 %>
-<%= link_to '#', class: 'add-recipe-btn' do %>
+<%= link_to new_recipe_path, class: 'add-recipe-btn' do %>
   <span class='add-recipe--btn-text'>追加する</span>
   <%= image_tag 'top.png' , size: '185x50' ,class: "add-recipe-btn-icon" %>
 <% end %>
