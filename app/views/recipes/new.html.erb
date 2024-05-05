@@ -1,6 +1,7 @@
 <head>
   <%= stylesheet_link_tag 'recipes/new', :media => "all" %>
   <%= stylesheet_link_tag 'reset', :media => "all" %>
+  <%= javascript_include_tag 'new' %>
 </head>
 
 <%= render "shared/index_header" %>
@@ -48,6 +49,19 @@
           </div>
           <%= f.collection_select(:kondate_id, Kondate.all, :id, :name, {}, {class:"select-box", id:"recipe-sales-status"}) %>
         </div>
+
+        <%= f.fields_for :foods do |ff| %>
+          <div class="weight-bold-text">
+            材料
+            <span class="indispensable">必須</span>
+          </div>
+          <div class='forms'>
+            <%= ff.text_field :name, class:"food-text", id:"food-name", placeholder:"例：にんじん", maxlength:"15" %>
+            <%= ff.text_field :amount, class:"food-text", id:"food-amount", placeholder:"例：２本", maxlength:"15" %>
+          </div>
+        <% end %>
+        <button id='add' type='button' style='display: none;'>追加</button>
+
 
       </div>
     </div>
