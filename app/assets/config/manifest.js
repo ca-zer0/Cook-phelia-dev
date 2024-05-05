@@ -9,3 +9,4 @@
 //= link recipes/btn.css
 //= link recipes/index.css
 //= link recipes/new.css
+//= link recipes/show.css
