@@ -3,8 +3,12 @@ window.onload = function() {
   add.addEventListener('click', function() {
     var forms = document.querySelector('.forms');
     var clone = forms.cloneNode(true);
-    clone.querySelector('#food-name').id = 'food-name' + new Date().getTime();
-    clone.querySelector('#food-amount').id = 'food-amount' + new Date().getTime();
+
+    clone.querySelector('#food-name').value = '';
+    clone.querySelector('#food-amount').value = '';
+
+    clone.querySelector('#food-name').name = 'foods[][name]';
+    clone.querySelector('#food-amount').name = 'foods[][amount]';
     forms.parentNode.appendChild(clone);
   });
 
