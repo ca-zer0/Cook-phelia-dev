@@ -6,7 +6,6 @@
 //= link users/create.css
 //= link shared/header.css
 //= link shared/footer.css
-//= link recipes/btn.css
 //= link recipes/index.css
 //= link recipes/new.css
 //= link recipes/show.css

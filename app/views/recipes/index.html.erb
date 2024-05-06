@@ -1,6 +1,5 @@
 <head>
   <%= stylesheet_link_tag 'recipes/index', :media => "all" %>
-  <%= stylesheet_link_tag 'recipes/btn', :media => "all" %>
   <%= stylesheet_link_tag 'reset', :media => "all" %>
 </head>
 
@@ -44,8 +43,7 @@
 </div>
 <%# /レシピ一覧 %>
 <%= link_to new_recipe_path, class: 'add-recipe-btn' do %>
-  <span class='add-recipe--btn-text'>追加する</span>
-  <%= image_tag 'top.png' , size: '50x50' ,class: "add-recipe-btn-icon" %>
+  <span class='add-recipe--btn-text'>マイレシピを追加する</span>
 <% end %>
 <%= render "shared/footer" %>
 </body>
