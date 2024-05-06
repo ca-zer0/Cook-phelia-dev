@@ -12,8 +12,14 @@
     <ul class='item-lists'>
     <% @recipes.each do |recipe| %>
       <li class='list'>
-      <%= link_to recipe_path(recipe.id), class: 'recipe-link' do %>
-          <%= image_tag recipe.image, class: "recipe-img" %>
+
+        <%= link_to recipe_path(recipe.id), class: 'recipe-link' do %>
+        <div class='item-img-content'>
+        <% if recipe.image.attached? %>
+        <%= image_tag recipe.image, size: '185x50', class: "recipe-img" %>
+        <% end %>
+        </div>
+
         <div class='recipe-info'>
           <h3 class='recipe-name'>
             <%= recipe.name %>

@@ -30,6 +30,7 @@ has_many :lists, through: :list_recipes
 
 | Column   | Type       | Options     |
 | -------  | ------     | --------    |
+| people   | string     | null: false |
 | name     | string     | null: false |
 | amount   | string     | null: false |
 
