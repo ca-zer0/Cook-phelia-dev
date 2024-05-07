@@ -3,3 +3,6 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "header"
 import "new"
+import "addlist"
+//= require jquery
+//= require jquery_ujs
