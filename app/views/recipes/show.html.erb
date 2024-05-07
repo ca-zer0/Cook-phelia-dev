@@ -26,7 +26,7 @@
     <%= link_to edit_recipe_path(@recipe_food), class: 'edit-recipe-btn' do %>
       <span class='edit-recipe--btn-text'>編集する</span>
     <% end %>
-    <%= link_to recipe_path, data: {turbo_method: :delete}, class: 'destroy-recipe-btn' do %>
+    <%= link_to recipe_path(@recipe_food), data: {turbo_method: :delete}, class: 'destroy-recipe-btn' do %>
       <span class='destroy-recipe--btn-text'>削除する</span>
     <% end %>
     <%= link_to '#', class: 'addlist-recipe-btn' do %>
