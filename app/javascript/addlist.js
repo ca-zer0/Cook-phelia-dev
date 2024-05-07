@@ -1,26 +1,25 @@
-$(document).ready(function () {
+$(document).ready(function(){
   $.ajaxSetup({
-    headers: {
-      'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-    }
+      headers: {
+          'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+      }
   });
 
   $("[id^='add-to-list-']").on("click", function() {
-    var recipeID = $(this).data('id');
+    var recipeID = this.id.replace('add-to-list-', '');
     $.ajax({
-      type: "POST",
       url: "/lists",
-      data: JSON.stringify({
-        list: {
-          recipe_id: recipeID
-        }
-      }),
-      contentType: 'application/json',
+      method: "POST",
+      data: {
+          list: {
+            recipe_id: recipeID
+          }
+      },
       success: function(response) {
-        console.log(response);
+          console.log(response);
       },
       error: function(jqXHR, textStatus, errorThrown) {
-        console.log(jqXHR, textStatus, errorThrown);
+          console.log(jqXHR, textStatus, errorThrown);
       }
     });
   });
