@@ -29,8 +29,10 @@
     <%= link_to recipe_path(@recipe_food), data: {turbo_method: :delete}, class: 'destroy-recipe-btn' do %>
       <span class='destroy-recipe--btn-text'>削除する</span>
     <% end %>
-    <%= link_to '#', class: 'addlist-recipe-btn' do %>
-      <span class='addlist-recipe--btn-text'>リストに<br>追加する</span>
-    <% end %>
+      <div class='addlist-recipe-btn' id="add-to-list-#{@recipe_food.id}" style="cursor:pointer;">
+        <span class='addlist-recipe--btn-text'>リストに<br>追加する</span>
+      </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <%= javascript_include_tag 'addlist' %>
 </body>

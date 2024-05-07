@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   }
 
   resources :recipes
+  resources :lists, only: [:create, :index]
 
 end
