@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, except: [:index,:show]
+  before_action :set_recipe, only: [:show, :edit, :update]
 
   def index
     @recipes = Recipe.all.order("created_at DESC")
@@ -23,7 +24,22 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    ActiveRecord::Base.transaction do
+      @recipe_food.update!(recipe_params)
+      @recipe_food.foods.each_with_index do |food, i|
+        food.update!(foods_params[i])
+      end
+    end
+    redirect_to recipe_path
+  rescue ActiveRecord::RecordInvalid
+    Rails.logger.debug @recipe_food.errors.full_messages
+    render :edit, status: :unprocessable_entity
   end
 
 
@@ -38,4 +54,9 @@ class RecipesController < ApplicationController
       food.permit(:name, :amount, :recipe_id)
     end
   end
+
+  def set_recipe
+    @recipe_food = Recipe.find(params[:id])
+  end
+
 end

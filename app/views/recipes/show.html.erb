@@ -9,21 +9,21 @@
   <div class='show-recipe-screen'>
     <div class='show-recipe-items'>
       <div class='left-items'>
-        <%= image_tag @recipe.image, class: "recipe-img" %>
+        <%= image_tag @recipe_food.image, class: "recipe-img" %>
         <div class='recipe-name'>
-        <%= @recipe.name %>
+        <%= @recipe_food.name %>
         </div>
       </div>
       <div class='right-items'>
         <div class='categories'>
-          <p>カテゴリー: <%= @recipe.category.name %></p>
-          <p>構成: <%= @recipe.kondate.name %></p>
+          <p>カテゴリー: <%= @recipe_food.category.name %></p>
+          <p>構成: <%= @recipe_food.kondate.name %></p>
         </div>
       </div>
     </div>
   </div>
   <div class='recipe-btns'>
-    <%= link_to edit_recipe_path(@recipe), class: 'edit-recipe-btn' do %>
+    <%= link_to edit_recipe_path(@recipe_food), class: 'edit-recipe-btn' do %>
       <span class='edit-recipe--btn-text'>編集する</span>
     <% end %>
     <%= link_to recipe_path, data: {turbo_method: :delete}, class: 'destroy-recipe-btn' do %>
