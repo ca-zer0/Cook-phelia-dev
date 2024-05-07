@@ -55,13 +55,11 @@ belongs_to :food
 | Column | Type       | Options     |
 | -------| ------     | --------    |
 | user   | references | null: false |
+| recipe   | references | null: false |
 | memo   | text       |             |
 
 belongs_to :user
-has_many :list_recipes
-has_many :list_foods
-has_many :recipes, through: :list_recipe
-has_many :foods, through: :list_foods
+belongs_to :recipe
 
 
 ## list_recipes テーブル
