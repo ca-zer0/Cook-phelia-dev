@@ -14,7 +14,8 @@ class ListsController < ApplicationController
   end
 
   def destroy
-    if @list
+    @list = current_user.lists.find_by_recipe_id(params[:recipe_id]) 
+    if @list.present?
       @list.destroy
       flash[:notice] = "Successfully removed from the list."
     else

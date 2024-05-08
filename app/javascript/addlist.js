@@ -6,6 +6,7 @@ $(document).ready(function(){
   });
 
   $("[id^='add-to-list-']").on("click", function() {
+    event.preventDefault();
     var recipeID = this.id.replace('add-to-list-', '');
 
     if ($(this).text() == "リストに追加") {
