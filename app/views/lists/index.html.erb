@@ -15,7 +15,6 @@
         <td><%= list.recipe.id %></td>
         <td><%= list.recipe.name %></td>
         <td>
-          <%= link_to 'Show', list %>
           <%= link_to 'Edit', edit_list_path(list) %>
           <%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
