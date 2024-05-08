@@ -5,7 +5,7 @@ $(document).ready(function(){
       }
   });
 
-  $("[id^='add-to-list-']").on("click", function() {
+  $("[id^='add-to-list-']").off('click').on("click", function(event) {
     event.preventDefault();
     var recipeID = this.id.replace('add-to-list-', '');
 
