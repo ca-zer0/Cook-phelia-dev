@@ -1,26 +1,11 @@
-<h1>Lists</h1>
+<head>
+<%= stylesheet_link_tag 'reset', :media => "all", 'data-turbolinks-track': 'reload' %>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
 
-<table>
-  <thead>
-    <tr>
-      <th>Recipe ID</th>
-      <th>Recipe Name</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @lists.each do |list| %>
-      <tr>
-        <td><%= list.recipe.id %></td>
-        <td><%= list.recipe.name %></td>
-        <td>
-          <%= link_to 'Edit', edit_list_path(list) %>
-          <%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'New List', new_list_path %>
+<body>
+  <div class='list-screen'>
+    <div class='list-items'>
+    </div>
+  </div>
+</body>
