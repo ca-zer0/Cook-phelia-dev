@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag 'shared/header', :media => "all" %>
+<%= stylesheet_link_tag 'shared/header', :media => "all", 'data-turbolinks-track': 'reload' %>
 <%= javascript_include_tag 'header_index' %>
 
 
@@ -32,7 +32,9 @@
       <li class="list-down">
       <%= link_to 'マイレシピ', recipes_path, class: 'path' %>
       </li>
-      <li class="list-down">買い物リスト</li>
+      <li class="list-down">
+      <%= link_to '買い物リスト', lists_path, class: 'path' %>
+      </li>
     </ul>
   </div>
 </header>

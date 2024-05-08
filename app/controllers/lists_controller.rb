@@ -1,7 +1,7 @@
 class ListsController < ApplicationController
 
   def index
-    @recipes = current_user.recipes
+    @lists = List.includes(:recipe).all
   end
 
   def create
