@@ -4,5 +4,6 @@ import "controllers"
 import "header"
 import "new"
 import "addlist"
+import "delete"
 //= require jquery
 //= require jquery_ujs
